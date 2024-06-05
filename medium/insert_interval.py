@@ -1,7 +1,7 @@
 # https://leetcode.com/problems/insert-interval/submissions/1278239253/
 
 # Time Complexity: O(n)
-# Space Complexity: O(1)
+# Space Complexity: O(n)
 
 # Type: Iterative, Arrays
 
