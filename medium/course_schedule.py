@@ -4,7 +4,7 @@ https://leetcode.com/problems/course-schedule/submissions/1284997301/
 Time Complexity: O(n)
 Space Complexity: O(n)
 
-Type: Topological Sort
+Type: Topological Sort, Kahn's Algorithm
 """
 from collections import deque
 
