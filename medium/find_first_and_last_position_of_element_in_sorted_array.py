@@ -1,11 +1,46 @@
 """
-https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/submissions/1310211331/
+https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/submissions/1310215840/
 
 Time Complexity: O(log n)
 Space Complexity: O(1)
 
-Type: Binary Search
+Type: Binary Search, Recursion
 """
+class Solution:
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        n = len(nums)
+
+        def binary_search(search_left):
+            left = 0
+            right = n - 1
+            idx = -1
+            while left <= right:
+                mid = (left + right) // 2
+                if nums[mid] < target:
+                    left = mid + 1
+                elif nums[mid] > target:
+                    right = mid - 1
+                else:
+                    idx = mid
+                    if search_left:
+                        right = mid - 1
+                    else:
+                        left = mid + 1
+            return idx
+
+        leftBound = binary_search(True)
+        rightBound = binary_search(False)
+
+        return [leftBound, rightBound]
+    
+"""
+https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/submissions/1310211331/
+
+Time Complexity: NOT O(log n)
+Space Complexity: O(1)
+
+Type: Binary Search
+
 class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
         n = len(nums)
@@ -61,4 +96,4 @@ class Solution:
                 break
 
         return [start, end]
-        
+"""
